@@ -33,14 +33,35 @@ function Application(props) {
   return (
     <section className={styles.appContainer}>
       <h2>{application.company} Interview</h2>
-      <div>Date: {application.date}</div>
-      <div>Time of Appointment: {application.time}</div>
-      <div>Interviewer: {application.interviewer}</div>
-      <div>Interviewer Email: {application.interviewerEmail}</div>
-      <div>Position Applied For: {application.jobTitle}</div>
-      <div>Position Salary: {application.salary}</div>
-      <div>Remote: {application.remote}</div>
-      <div>Second Interview: {application.secondInterview}</div>
+      <div className={styles.appInfo}>
+        <p>
+          Date: <span>{application.date}</span>
+        </p>
+        <p>
+          Time of Appointment: <span>{application.time}</span>
+        </p>
+        <p>
+          Interviewer: <span>{application.interviewer}</span>
+        </p>
+        <p>
+          Interviewer Email: <span>{application.interviewerEmail}</span>
+        </p>
+        <p>
+          Position Applied For: <span>{application.jobTitle}</span>
+        </p>
+        <p>
+          Position Salary: <span>${application.salary}</span>
+        </p>
+        <p>
+          Remote: <span>{application.remote ? 'Yes' : 'No'}</span>
+        </p>
+        <p>
+          Second Interview:{' '}
+          <span>{application.secondInterview ? 'Yes' : 'No'}</span>
+        </p>
+      </div>
+      <button>Edit</button>
+      <button>Delete</button>
     </section>
   );
 }

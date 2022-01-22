@@ -40,15 +40,20 @@ function Dashboard(props) {
       });
 
     return () => clearTimeout(handleLoadingTimeOut);
-  }, [application.length]);
+  }, [application]);
 
   //   MUI DataGrid
   // Delete a user
   const deleteUser = React.useCallback(
     (id) => () => {
-      axios.delete(`http://localhost:3111/applications/${id}`).then((res) => {
-        navigate('/dashboard');
-      });
+      axios
+        .delete(`http://localhost:3111/applications/${id}`)
+        .then((res) => {
+          console.log(res.data)
+        })
+        .then((res) => {
+          navigate('/dashboard');
+        });
       setTimeout(() => {
         setRows((prevRows) => prevRows.filter((row) => row.id !== id));
       });
@@ -56,18 +61,18 @@ function Dashboard(props) {
     [navigate]
   );
 
-//   const handleSubmit = React.useCallback(
-//     (id) => (e) => {
-//       setApplication({ ...application, [e.target.id]: e.target.value });
-//       axios.put(`http://localhost:3111/applications/${id}`, id).then((res) => {
-//         navigate('/dashboard');
-//       });
-//       setTimeout(() => {
-//         setRows((prevRows) => prevRows.filter((row) => row.id !== id));
-//       });
-//     },
-//     [navigate]
-//   );
+  //   const handleSubmit = React.useCallback(
+  //     (id) => (e) => {
+  //       setApplication({ ...application, [e.target.id]: e.target.value });
+  //       axios.put(`http://localhost:3111/applications/${id}`, id).then((res) => {
+  //         navigate('/dashboard');
+  //       });
+  //       setTimeout(() => {
+  //         setRows((prevRows) => prevRows.filter((row) => row.id !== id));
+  //       });
+  //     },
+  //     [navigate]
+  //   );
 
   //   More Info Navigate function
   const moreInfo = React.useCallback(
@@ -98,7 +103,7 @@ function Dashboard(props) {
       field: 'date',
       headerName: 'Date',
       type: 'date',
-    //   width: 100,
+      //   width: 100,
       //   editable: true,
       ...dateFormat,
     },
@@ -197,7 +202,7 @@ function Dashboard(props) {
           rows={rows}
           rowHeight={50}
           columns={columns}
-          pageSize={20}
+          pageSize={100}
           rowsPerPageOptions={[100]}
           disableSelectionOnClick
           onColumnResize
@@ -213,7 +218,7 @@ function Dashboard(props) {
             border: 'none',
           }}
           density='compact'
-        //   onCellEditCommit={handleSubmit}
+          //   onCellEditCommit={handleSubmit}
         />
       </div>
     </div>

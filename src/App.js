@@ -33,27 +33,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/login' element={<Login />}></Route>
-          <Route
-            path='/dashboard'
-            element={
-              <Dashboard
-
-              />
-            }></Route>
-          <Route
-            path='/add-interview'
-            element={
-              <AddInterview
-
-              />
-            }></Route>
-          <Route
-            path='/application/:id'
-            element={
-              <Application
-
-              />
-            }></Route>
+          <Route path='/dashboard' element={<Dashboard />}></Route>
+          <Route path='/add-interview' element={<AddInterview />}></Route>
+          <Route path='/applications/:id' element={<Application />}></Route>
         </Routes>
       </UserContext.Provider>
     </div>

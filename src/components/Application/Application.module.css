@@ -1,9 +1,5 @@
-.listItem {
-  display: flex;
-  width: 100%;
-  max-width: 1500px;
-  justify-content: space-evenly;
-}
-.listItem p {
-    margin-right: 2rem;
+.appContainer {
+  border: 1px solid red;
+  height: calc(100vh - 50px);
+  padding: 1rem;
 }

@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import styles from './AddInterview.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import moment from 'moment';
 
 function AddInterview(props) {
   const navigate = useNavigate();
-    const [application, setApplication] = useState({
-      // date: new Date(),
-      time: '',
-      company: '',
-      interviewer: '',
-      interviewerEmail: '',
-      jobTitle: '',
-      salary: 0,
-      secondInterview: true,
-      remote: true,
-    });
-
+  const [application, setApplication] = useState({
+    date: '',
+    time: '',
+    company: '',
+    interviewer: '',
+    interviewerEmail: '',
+    jobTitle: '',
+    salary: 0,
+    secondInterview: true,
+    remote: true,
+  });
 
   function createNewApplication(e) {
     e.preventDefault();
@@ -48,7 +48,7 @@ function AddInterview(props) {
           {/* Time */}
           <label htmlFor='time'>Interview time: </label>
           <input
-            type='time'
+            type='text'
             id='time'
             value={application.time}
             onChange={handleChange}

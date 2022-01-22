@@ -25,7 +25,7 @@ function Application(props) {
   useEffect(() => {
     getApplication();
     return setApplication(null);
-  },[]);
+  }, []);
 
   const handleChange = (event) => {
     setApplication({ ...application, [event.target.id]: event.target.value });
@@ -49,12 +49,10 @@ function Application(props) {
       });
   };
   const handleDelete = () => {
-    axios
-      .delete(`http://localhost:3111/applications/${id}`)
-      .then((res) => {
-        console.log(res);
-        navigate('/dashboard');
-      });
+    axios.delete(`http://localhost:3111/applications/${id}`).then((res) => {
+      console.log(res);
+      navigate('/dashboard');
+    });
   };
 
   if (!application) {
@@ -122,15 +120,21 @@ function Application(props) {
               id='secondInterview'
               value={application.secondInterview}
             />
-            <button type='submit'>Submit</button>
-            <button type='button' onClick={closeModal}>
-              Close
-            </button>
+            <div>
+                <button type='button' onClick={closeModal} className={styles.closeBtn}>
+                  Close
+                </button>
+                <button type='submit' className={styles.submitBtn}>Submit</button>
+            </div>
           </form>
         </div>
       ) : (
         <>
-          <h2>{application.company} Interview</h2>
+          <div className={styles.viewHeader}>
+            <button onClick={editShowPage} className={styles.editBtn}>Edit</button>
+            <h2>{application.company} Interview</h2>
+            <button onClick={handleDelete} className={styles.deleteBtn}>Delete</button>
+          </div>
           <div className={styles.appInfo}>
             <p>
               Date: <span>{application.date}</span>
@@ -158,8 +162,6 @@ function Application(props) {
               <span>{application.secondInterview ? 'Yes' : 'No'}</span>
             </p>
           </div>
-          <button onClick={editShowPage}>Edit</button>
-          <button onClick={handleDelete}>Delete</button>
         </>
       )}
     </section>

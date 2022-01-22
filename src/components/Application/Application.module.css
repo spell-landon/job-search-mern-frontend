@@ -28,3 +28,106 @@
   color: black;
   font-size: 18px;
 }
+
+/* View Header */
+.viewHeader {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 550px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.viewHeader button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+/* Edit Button */
+.viewHeader .editBtn {
+  background-color: rgb(128, 136, 128);
+  color: white;
+}
+.viewHeader .editBtn:hover {
+  background-color: rgb(106, 126, 106);
+}
+/* Delete Button */
+.viewHeader .deleteBtn {
+  color: white;
+  background-color: rgb(192, 163, 163);
+}
+.viewHeader .deleteBtn:hover {
+  color: white;
+  background-color: rgb(201, 108, 108);
+}
+
+/* Modal */
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.modal form input {
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+}
+/* Modal Buttons */
+.modal form div {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.modal form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+/* Submit Edit Button */
+.modal form div .submitBtn {
+  margin-left: auto;
+  color: white;
+  background-color: rgb(77, 99, 82);
+}
+.modal form div .submitBtn:hover {
+  background-color: rgb(106, 126, 106);
+}
+.modal form div .submitBtn:active {
+  background-color: rgb(63, 97, 71);
+}
+/* Close Edit Button */
+.modal form div .closeBtn {
+  background-color: rgb(207, 207, 207);
+}
+.modal form div .closeBtn:hover {
+  background-color: rgb(185, 185, 185);
+}
+.modal form div .closeBtn:active {
+  background-color: rgb(165, 165, 165);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

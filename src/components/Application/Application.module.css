@@ -1,0 +1,9 @@
+.listItem {
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  justify-content: space-evenly;
+}
+.listItem p {
+    margin-right: 2rem;
+}

@@ -1,0 +1,83 @@
+.addContainer {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addInterview {
+  height: 700px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid rgb(150, 150, 150);
+  box-shadow: 0 2px 4px rgba(150, 150, 150, 0.5);
+  background-color: rgba(128, 136, 128, 0.03);
+  padding: 2rem;
+  animation: fadeup 1s ease-in forwards;
+}
+.addInterview > .jobInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.addInterview > form > label,
+.addInterview > form > input {
+  align-self: flex-start;
+  width: 100%;
+}
+.addInterview > .jobInput > label {
+  margin-bottom: 0.2rem;
+}
+.addInterview > .jobInput > input {
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+.addInterview > .jobInput > input:focus {
+  outline: none;
+  background-color: rgba(128, 136, 128, 0.1);
+}
+.remoteContainer,
+.secondContainer {
+  margin-bottom: 1rem;
+}
+#addBtn {
+  padding: 0.2rem 0.7rem;
+  cursor: pointer;
+}
+#addBtn {
+  padding: 0.5rem 1rem;
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  background-color: rgb(128, 136, 128);
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+#addBtn:hover {
+  background-color: rgb(106, 126, 106);
+}
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

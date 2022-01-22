@@ -1,0 +1,83 @@
+.dbContainer {
+  height: calc(100vh - 50px);
+  padding: 1rem;
+}
+.dbContainer > section {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.dbContainer > section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  height: fit-content;
+  /* position: absolute; */
+}
+.dbContainer > section > div > h1 {
+  font-size: 24px;
+  text-align: center;
+}
+.dbContainer > section > div > p {
+  font-size: 14px;
+  color: rgb(110, 110, 110);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.dbContainer i {
+  font-size: 12px;
+}
+.dbContainer table {
+  width: 100%;
+  border: none;
+  padding: 0;
+  background-color: rgb(240, 240, 240);
+}
+.dbContainer > table > thead > tr > th {
+  width: fit-content;
+  cursor: pointer;
+}
+.dbContainer > table > thead > tr > th:hover {
+  color: rgb(90, 90, 90);
+}
+.dbContainer > table > tbody {
+}
+.dbContainer > table > tbody > tr > td {
+  border: none;
+  padding: 0.2rem 0.5rem;
+}
+.dbContainer > table > tbody > tr:nth-child(even) {
+  background-color: rgb(245, 245, 245);
+  animation: fadeFromLeft 1s ease forwards;
+}
+.dbContainer > table > tbody > tr:nth-child(odd) {
+  background-color: white;
+  animation: fadeFromRight 1s ease forwards;
+}
+.dbContainer > table > tbody > tr:hover {
+  /* cursor: default; */
+  background-color: rgb(235, 235, 235);
+}
+@keyframes fadeFromLeft {
+  0% {
+    transform: translateX(-5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromRight {
+  0% {
+    transform: translateX(5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

@@ -73,7 +73,7 @@ function Application(props) {
             />
             <label htmlFor='time'>Time</label>
             <input
-              type='time'
+              type='text'
               onChange={handleChange}
               id='time'
               value={application.time}
@@ -106,34 +106,58 @@ function Application(props) {
               id='salary'
               value={application.salary}
             />
-            <label htmlFor='remote'>Remote</label>
-            <input
-              type='text'
-              onChange={handleChange}
-              id='remote'
-              value={application.remote}
-            />
-            <label htmlFor='secondInterview'>Second Interview</label>
-            <input
-              type='text'
-              onChange={handleChange}
-              id='secondInterview'
-              value={application.secondInterview}
-            />
-            <div>
-                <button type='button' onClick={closeModal} className={styles.closeBtn}>
-                  Close
-                </button>
-                <button type='submit' className={styles.submitBtn}>Submit</button>
+            <div className={styles.checkboxes}>
+              <div>
+                <label htmlFor='remote'>Remote</label>
+                <input
+                  type='checkbox'
+                  onChange={() => {
+                    setApplication({ ...application, remote: !application.remote });
+                  }}
+                  id='remote'
+                  value={application.remote}
+                  checked={application.remote}
+                />
+              </div>
+              <div>
+                <label htmlFor='secondInterview'>Second Interview</label>
+                <input
+                  type='checkbox'
+                  onChange={() => {
+                    setApplication({
+                      ...application,
+                      secondInterview: !application.secondInterview,
+                    });
+                  }}
+                  id='secondInterview'
+                  value={application.secondInterview}
+                  checked={application.secondInterview}
+                />
+              </div>
+            </div>
+            <div className={styles.formButtons}>
+              <button
+                type='button'
+                onClick={closeModal}
+                className={styles.closeBtn}>
+                Close
+              </button>
+              <button type='submit' className={styles.submitBtn}>
+                Submit
+              </button>
             </div>
           </form>
         </div>
       ) : (
         <>
           <div className={styles.viewHeader}>
-            <button onClick={editShowPage} className={styles.editBtn}>Edit</button>
+            <button onClick={editShowPage} className={styles.editBtn}>
+              Edit
+            </button>
             <h2>{application.company} Interview</h2>
-            <button onClick={handleDelete} className={styles.deleteBtn}>Delete</button>
+            <button onClick={handleDelete} className={styles.deleteBtn}>
+              Delete
+            </button>
           </div>
           <div className={styles.appInfo}>
             <p>

@@ -84,11 +84,22 @@
   margin-bottom: 1rem;
   padding: 0.3rem;
 }
-/* Modal Buttons */
-.modal form div {
+/* Checkboxes */
+.checkboxes {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  justify-content: space-around;
+}
+.checkboxes label {
+  margin-right: 1rem;
+}
+/* Modal Buttons */
+.modal form .formButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 3rem;
 }
 .modal form button {
   padding: 0.5rem 1rem;

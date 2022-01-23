@@ -49,7 +49,7 @@ function Dashboard(props) {
       axios
         .delete(`http://localhost:3111/applications/${id}`)
         .then((res) => {
-          console.log(res.data)
+          console.log(res.data);
         })
         .then((res) => {
           navigate('/dashboard');
@@ -146,19 +146,6 @@ function Dashboard(props) {
       ...usdPrice,
     },
     {
-      field: 'actions',
-      headerName: 'Delete',
-      type: 'actions',
-      width: 74,
-      getActions: (params) => [
-        <GridActionsCellItem
-          icon={<i className='far fa-trash-alt'></i>}
-          label='Delete'
-          onClick={deleteUser(params.id)}
-        />,
-      ],
-    },
-    {
       field: 'action',
       headerName: 'More Info',
       type: 'actions',
@@ -168,6 +155,19 @@ function Dashboard(props) {
           icon={<i className='fas fa-info-circle'></i>}
           label='More Info'
           onClick={moreInfo(params.id)}
+        />,
+      ],
+    },
+    {
+      field: 'actions',
+      headerName: 'Delete',
+      type: 'actions',
+      width: 74,
+      getActions: (params) => [
+        <GridActionsCellItem
+          icon={<i className='far fa-trash-alt'></i>}
+          label='Delete'
+          onClick={deleteUser(params.id)}
         />,
       ],
     },

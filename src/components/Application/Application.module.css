@@ -59,11 +59,11 @@
 /* Delete Button */
 .viewHeader .deleteBtn {
   color: white;
-  background-color: rgb(192, 163, 163);
+  background-color: #c0a3a3;
 }
 .viewHeader .deleteBtn:hover {
   color: white;
-  background-color: rgb(201, 108, 108);
+  background-color: #c96c6c;
 }
 
 /* Modal */

@@ -47,3 +47,23 @@
 .header .logoutBtn:hover {
   background-color: rgb(192, 163, 163);
 }
+/* Register Button */
+.registerBtn {
+  padding: 0.3rem 0.7rem;
+  border: none;
+  background-color: rgb(207, 207, 207);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 100;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: black;
+  text-decoration: none;
+}
+.registerBtn:hover {
+  background-color: rgb(185, 185, 185);
+}

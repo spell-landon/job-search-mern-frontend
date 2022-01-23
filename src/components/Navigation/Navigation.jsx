@@ -3,6 +3,7 @@ import styles from './Navigation.module.css';
 import { useContext } from 'react';
 import { UserContext } from '../../UserContext';
 import { Link } from 'react-router-dom';
+import Register from '../Register/Register';
 
 function Navigation(props) {
   const { user, setUser } = useContext(UserContext);
@@ -41,6 +42,11 @@ function Navigation(props) {
             </Link>
           ) : null}
         </div>
+        {user.username ? null : (
+          <Link to='/register' className={styles.registerBtn}>
+            Register
+          </Link>
+        )}
       </nav>
     </header>
   );

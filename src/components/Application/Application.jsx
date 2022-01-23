@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Application.module.css';
+import moment from 'moment';
 
 function Application(props) {
   const { id } = useParams();
@@ -54,6 +55,14 @@ function Application(props) {
       navigate('/dashboard');
     });
   };
+
+  const formatDate = () => {
+    return moment(application.date).format('L');
+  };
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
 
   if (!application) {
     return <h1>Loading...</h1>;
@@ -112,7 +121,10 @@ function Application(props) {
                 <input
                   type='checkbox'
                   onChange={() => {
-                    setApplication({ ...application, remote: !application.remote });
+                    setApplication({
+                      ...application,
+                      remote: !application.remote,
+                    });
                   }}
                   id='remote'
                   value={application.remote}
@@ -161,7 +173,7 @@ function Application(props) {
           </div>
           <div className={styles.appInfo}>
             <p>
-              Date: <span>{application.date}</span>
+              Date: <span>{formatDate()}</span>
             </p>
             <p>
               Time of Appointment: <span>{application.time}</span>
@@ -176,14 +188,15 @@ function Application(props) {
               Position Applied For: <span>{application.jobTitle}</span>
             </p>
             <p>
-              Position Salary: <span>${application.salary}</span>
+              Position Salary:{' '}
+              <span>{formatter.format(application.salary)}</span>
             </p>
             <p>
-              Remote: <span>{application.remote ? 'Yes' : 'No'}</span>
+              Remote: <span>{application.remote ? 'Yes ✅' : 'No ❌'}</span>
             </p>
             <p>
               Second Interview:{' '}
-              <span>{application.secondInterview ? 'Yes' : 'No'}</span>
+              <span>{application.secondInterview ? 'Yes ✅' : 'No ❌'}</span>
             </p>
           </div>
         </>

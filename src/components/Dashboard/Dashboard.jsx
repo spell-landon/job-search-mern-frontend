@@ -173,9 +173,9 @@ function Dashboard(props) {
     },
   ];
 
-  if (loading && !application.length) {
-    return <h2 className={styles.loading}>Loading...</h2>;
-  }
+  // if (loading && !application.length) {
+  //   return <h2 className={styles.loading}>Loading...</h2>;
+  // }
   if (!loading && !application.length) {
     return (
       <h2 className={styles.loading}>
@@ -207,7 +207,9 @@ function Dashboard(props) {
           disableSelectionOnClick
           onColumnResize
           onColumnWidthChange
-          components={{ Toolbar: GridToolbar }}
+          components={{
+            Toolbar: GridToolbar,
+          }}
           sx={{
             '& .MuiDataGrid-columnHeader': {
               backgroundColor: 'rgba( 241, 241, 241, 100%)',

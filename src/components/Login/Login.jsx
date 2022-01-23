@@ -40,7 +40,7 @@ function Login(props) {
               value={searchString}
               autoComplete='off'
               required
-              // placeholder='just type whatever -> enter'
+              placeholder='just type whatever -> enter'
             />
             <label htmlFor='password'>Password:</label>
             <input
@@ -49,7 +49,7 @@ function Login(props) {
               // onChange={handleChange}
               value=''
               autoComplete='off'
-              // placeholder='does not work, yet.'
+              placeholder='does not work, yet.'
             />
             <input type='submit' value='Login' id={styles.loginBtn} />
           </form>

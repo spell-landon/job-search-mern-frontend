@@ -1,5 +1,8 @@
 # Job Search Tracker - Frontend
 
+## Link to Backend
+https://github.com/spell-landon/job-search-mern-api
+
 ## Project Description
 
 Job Search Tracker lets you keep track of your job search by adding interview dates and info about your applications.
